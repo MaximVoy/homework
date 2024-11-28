@@ -1,0 +1,23 @@
+calls = 0
+def count_calls ():
+    global calls
+    calls += 1
+
+def string_info (string):
+    print(len(string), string.upper(), string.lower())
+    count_calls()
+
+def is_contains (string, list_to_search):
+    x = string.lower()
+    y = list_to_search.lower()
+    print(x in y)
+    count_calls()
+
+
+string_info(input('Введите строку '))
+is_contains(input('Введите строку '), input('Введите список '))
+
+print(calls)
+
+
+# Правильно ли сделал, что программа запрашивает данные(строку и список), или надо было их вписать изначально?
