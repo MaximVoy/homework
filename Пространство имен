@@ -4,20 +4,23 @@ def count_calls ():
     calls += 1
 
 def string_info (string):
-    print((len(string), string.upper(), string.lower()))
     count_calls()
+    return len(string), string.upper(), string.lower()
 
-def is_contains (string, list_to_search = []):
+
+def is_contains (string, list_to_search):
     x = string.lower()
-    y = list_to_search.lower()
-    print(x in y)
+    y = ','.join(list_to_search)
+    y = y.lower()
     count_calls()
+    return x in y
 
 
-string_info(input('Введите строку '))
-is_contains(input('Введите строку '), input('Введите список '))
 
+
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))
+print(is_contains('cycle', ['recycling', 'cyclic']))
 print(calls)
-
-
-# Правильно ли сделал, что программа запрашивает данные(строку и список), или надо было их вписать изначально?
